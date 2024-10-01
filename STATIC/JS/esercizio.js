@@ -1,65 +1,84 @@
-let nome = "";
-while (nome != null) {
-  nome = alert("Inserisci il tuo nome");
-
-  alert("Ciao, " + nome.trim() + " Benvenuto al quiz. ");
-
-  risposteCorrette = 0;
-
-  // Domanda 1
-  let risposta1 = alert("Qual è la capitale d'Italia?").trim().toLowerCase();
-  if (risposta1 === "roma") {
-    risposteCorrette++;
-  }
-
-  // Domanda 2
-  let risposta2 = alert("Qual è la moneta ufficiale della Germania?")
-    .trim()
-    .toLowerCase();
-  if (risposta2 === "euro") {
-    risposteCorrette++;
-  }
-
-  // Domanda 3
-  let risposta3 = alert("Qual è il colore del cielo in una giornata serena?")
-    .trim()
-    .toLowerCase();
-  if (risposta3 === "blu") {
-    risposteCorrette++;
-  }
-
-  // Domanda 4
-  let risposta4 = alert("Quanto fa 2 + 2?").trim().toLowerCase();
-  if (risposta4 === "4") {
-    risposteCorrette++;
-  }
-
-  // Domanda 5
-  let risposta5 = alert("Qual è il frutto simbolo della Apple?")
-    .trim()
-    .toLowerCase();
-  if (risposta5 === "mela") {
-    risposteCorrette++;
-  }
-
-  // Domanda 6
-  let risposta6 = alert("Qual è la lingua ufficiale in Francia?")
-    .trim()
-    .toLowerCase();
-  if (risposta6 === "francese") {
-    risposteCorrette++;
-  }
-
-  // Domanda 7
-  let risposta7 = alert("In che continente si trova l'Egitto?")
-    .trim()
-    .toLowerCase();
-  if (risposta7 === "africa") {
-    risposteCorrette++;
-  }
-
-  let percentualeCorrette = (risposteCorrette / 7) * 100;
-  console.log(
-    "Hai risposto correttamente al " + percentualeCorrette + "% delle domande."
-  );
+function percentuale(valore, totale = 7) {
+  return (valore / totale) * 100;
 }
+
+function sanatize(string) {
+  return string.toLowerCase().trim();
+}
+
+let nome;
+
+do {
+  nome = prompt("Inserisci il tuo nome:");
+} while (firstName === null || firstName.trim() === "");
+
+//variabile che mantiene il punteggio
+let punti = 0;
+
+//prima domanda
+let d1;
+do {
+  d1 = prompt("Qual è la capitale del Brasile?");
+} while (d1 === null || d1.trim() === "");
+d1 = sanatize(d1);
+if (d1 === "brasilia") score++;
+else alert("errato, la risposta giusta è Brasilia");
+
+//seconda domanda
+let d2;
+do {
+  d2 = prompt("Chi ha scritto la Divina Commedia?");
+} while (d2 === null || d2.trim() === "");
+d2 = d2.toLowerCase().trim();
+if (d2 === "dante") score++;
+else alert("errato, la risposta giusta è Dante");
+
+//terza domanda
+let d3;
+do {
+  d3 = prompt("Quanti giorni ci sono in un anno?");
+} while (d3 === null || d3.trim() === "");
+d3 = d3.toLowerCase().trim();
+if (d3 === "365") score++;
+else alert("errato, la risposta giusta è 365");
+
+//quarta domanda
+let d4;
+do {
+  d4 = prompt("Come si dice ciao in inglese");
+} while (d4 === null || d4.trim() === "");
+d4 = d4.toLowerCase().trim();
+if (d4 === "hello") score++;
+else alert("errato, la risposta giusta è Hello");
+
+//quinta domanda
+let d5;
+do {
+  d5 = prompt("Qual è il continente più grande del mondo?");
+} while (d5 === null || d5.trim() === "");
+d5 = d5.toLowerCase().trim();
+if (d5 === "russia") score++;
+else alert("errato, la risposta giusta è Russia");
+
+//sesta domanda
+let d6;
+do {
+  d6 = prompt("Quanti secondi ci sono in un minuto?");
+} while (d6 === null || d6.trim() === "");
+d6 = d6.toLowerCase().trim();
+if (d6 === "60") score++;
+else alert("errato, la risposta giusta è 60");
+
+//settima domanda
+let d7;
+do {
+  d7 = prompt("Qual è il mese più corto dell anno?");
+} while (d7 === null || d7.trim() === "");
+d7 = d7.toLowerCase().trim();
+if (d7 === "febbraio") score++;
+else alert("errato, la risposta giusta è Febbraio");
+
+//stampa punteggio finale
+alert("il tuo punteggio finale: " + punti);
+
+console.log("percentuale risposte giuste: " + percentuale);
